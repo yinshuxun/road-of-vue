@@ -1,5 +1,6 @@
 const express = require('express')
 const webpack = require('webpack')
+const path = require('path')
 const WebpackDevMiddleware = require('webpack-dev-middleware')
 const WebpackHotMiddleware = require('webpack-hot-middleware')
 const config = require('./webpack.config')
@@ -7,9 +8,10 @@ const compiler = webpack(config)
 const child_process = require("child_process")
 
 app = express()
-app.set('views', './views')
+app.set('views', './src')
 app.set('view engine', 'ejs')
-app.use(express.static('public'));
+app.use(express.static('dist'));
+
 
 app.use(WebpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
@@ -19,8 +21,8 @@ app.use(WebpackHotMiddleware(compiler))
 
 var router = express.Router()
 
-router.get('/', function (req, res, next) {
-    res.render('index', {message: 'Hey there!'});
+router.use('/', function (req, res, next) {
+    res.redirect('/dist')
 })
 app.use(router)
 

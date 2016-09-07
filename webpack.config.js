@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 const ROOT_PATH = path.resolve(__dirname);
 
 const publicPath = 'http://localhost:8080/dist';
@@ -45,9 +45,10 @@ var devConfig = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new htmlWebpackPlugin({
             title: 'road of vue',
-            template: `${ROOT_PATH}/src/index.html`
+            template: `ejs!${ROOT_PATH}/src/index.ejs`,
+            filename: 'index.html'
         }),
         new webpack.HotModuleReplacementPlugin()
     ]

@@ -1,6 +1,10 @@
 <template>
     <div>
-        <div>我爱你111</div>
+        <div>我爱你111可是我发现111</div>
+        <ol>
+            <li>11111</li>
+            <li>2222112</li>
+        </ol>
     </div>
 </template>
 <style>
