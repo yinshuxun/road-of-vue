@@ -1,13 +1,17 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ROOT_PATH = path.resolve(__dirname);
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const ROOT_PATH = path.resolve("./");
 
-// const WebpackDevServer = require('webpack-dev-server');
+const publicPath = 'http://localhost:8080/dist';
 
 var devConfig = {
     entry: {
-        app: [`${ROOT_PATH}/src/main.js`, hotMiddlewareScript]
+        app: [
+            `${ROOT_PATH}/src/main.js`,
+            'webpack/hot/dev-server',
+            'webpack-hot-middleware/client'
+        ]
     },
     output: {
         path: `${ROOT_PATH}/dist`,
@@ -41,19 +45,13 @@ var devConfig = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new htmlWebpackPlugin({
             title: 'road of vue',
-            template: `${ROOT_PATH}/src/index.html`
-        })
+            template: `ejs!${ROOT_PATH}/src/index.ejs`,
+            filename: 'index.html'
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
-    // ,
-    // devServer: {
-    //     historyApiFallback: true,
-    //     hot: true,
-    //     inline: true,
-    //     progress: true,
-    //     port: 3002
-    // }
 }
 
 module.exports = devConfig;

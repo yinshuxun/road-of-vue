@@ -2,9 +2,10 @@
     <div>
         <div>我爱你111可是我发现111</div>
         <ol>
-            <li>11111</li>
-            <li>2222112</li>
+            <li>122</li>
+            <li>2212111</li>
         </ol>
+        <Header></Header>
     </div>
 </template>
 <style>
@@ -15,11 +16,15 @@
     }
 </style>
 <script>
+    import Header from "./components/Header.vue";
     export default{
         data(){
             return {
                 msg: 'hello vue'
             }
+        },
+        components: {
+            Header
         }
     }
 </script>

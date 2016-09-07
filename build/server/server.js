@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 const WebpackDevMiddleware = require('webpack-dev-middleware')
 const WebpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('./webpack.config')
+const config = require('../config/webpack.base.config')
 const compiler = webpack(config)
 const child_process = require("child_process")
 
@@ -22,7 +22,7 @@ app.use(WebpackHotMiddleware(compiler))
 var router = express.Router()
 
 router.use('/', function (req, res, next) {
-    res.redirect('/dist')
+    res.redirect('./dist')
 })
 app.use(router)
 

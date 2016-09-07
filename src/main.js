@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 const router = new VueRouter();
 
 if (module.hot) {
-    module.hot.accept()
+    module.hot.accept();
 }
 
 router.map({
