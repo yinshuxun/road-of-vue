@@ -1,28 +1,24 @@
 <template>
     <div>
-        {{msg}}
-        <home></home>
+        {{msg}}<br/>
+        <a v-link="'home'">Home</a><br/>
+        <a v-link="'blog'">Personal Blog</a><br/>
     </div>
 </template>
 <style>
     body {
-        background-color: #444;
         color: #fff;
-        font-size: 20px;
+        font-size: 40px;
+        background-color: inherit;
+        text-align: center;
     }
 </style>
 <script>
-    import Home from "./modules/home/home.vue";
-
-
     export default{
         data(){
             return {
-                msg: 'hello vue'
+                msg: 'road of vue'
             }
-        },
-        components: {
-            Home
         }
     }
 </script>

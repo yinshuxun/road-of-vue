@@ -26,8 +26,8 @@
             }
         },
         created(){
-            Vue.http.get("/get-data-0").then((res)=> {
-                this.items = JSON.parse(res.data).list
+            Vue.http.get("/get-data-0").then((ret)=> {
+                this.items = ret.data.json().list
             })
         }
     }
