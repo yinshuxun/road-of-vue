@@ -1,11 +1,7 @@
 <template>
     <div>
-        <div>我爱你111可是我发现111</div>
-        <ol>
-            <li>122</li>
-            <li>2212111</li>
-        </ol>
-        <Header></Header>
+        {{msg}}
+        <home></home>
     </div>
 </template>
 <style>
@@ -16,7 +12,9 @@
     }
 </style>
 <script>
-    import Header from "./components/Header.vue";
+    import Home from "./modules/home/home.vue";
+
+
     export default{
         data(){
             return {
@@ -24,7 +22,7 @@
             }
         },
         components: {
-            Header
+            Home
         }
     }
 </script>

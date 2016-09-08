@@ -21,7 +21,7 @@ app.use(WebpackHotMiddleware(compiler))
 
 var router = express.Router()
 
-router.use('/', function (req, res, next) {
+router.use('/index', function (req, res, next) {
     res.redirect('./dist')
 })
 app.use(router)
