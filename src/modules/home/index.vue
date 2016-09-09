@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="home">
         road of vue!
         <ol>
             <li v-for="item in items">
@@ -8,12 +8,11 @@
         </ol>
     </div>
 </template>
-<style>
-    body {
+<style lang="stylus" scoped>
+    .home
         background-color: #dfdfdf;
         font-size: 30px;
         color: #fff;
-    }
 </style>
 <script>
     import Vue from 'vue';

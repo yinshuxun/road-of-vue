@@ -1,11 +1,13 @@
 <template>
-    <div>
-        <div>this is template body 01</div>
+    <div class="blog">
+        <div>this is my blog</div>
     </div>
 </template>
-<style>
-    body {
-
+<style scoped>
+    .blog {
+        background-color: black;
+        font-size: 30px;
+        color: #fff;;
     }
 </style>
 <script>

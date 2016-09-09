@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 
 import App from "./App.vue";
-import routerMap from "./router";
+import routerConfig from "./router";
 import "./utils";
 
 Vue.use(VueRouter);
@@ -14,7 +14,6 @@ if (module.hot) {
 }
 
 const router = new VueRouter();
-
-routerMap(router);
+routerConfig(router);
 
 router.start(App, '#app')
