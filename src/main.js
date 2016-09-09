@@ -1,4 +1,5 @@
 import Vue from "vue";
+import VueTouch from "vue-touch";
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 
@@ -6,6 +7,7 @@ import App from "./App.vue";
 import routerConfig from "./router";
 import "./utils";
 
+Vue.use(VueTouch);
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
