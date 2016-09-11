@@ -25,6 +25,11 @@ var devConfig = {
                 loader: 'vue'
             },
             {
+                test: /bootstrap\.styl$/,
+                loader: 'style!css!stylus!bootstrap',
+                exclude: /node_modules/
+            },
+            {
                 test: /\.styl$/,
                 loader: 'style!css!stylus'
             },

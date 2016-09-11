@@ -1,16 +1,11 @@
-<template>
+<template xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <div class="blog">
-        <div>this is my blog</div>
+        <div v-bind:class="{'blog-header':true}">123</div>
     </div>
 </template>
-<style scoped>
-    .blog {
-        background-color: black;
-        font-size: 30px;
-        color: #fff;;
-    }
-</style>
 <script>
+    import './index.styl'
+
     export default{
         data(){
             return {

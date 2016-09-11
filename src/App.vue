@@ -3,6 +3,10 @@
         <router-view></router-view>
     </div>
 </template>
+<style lang="stylus" scoped>
+    html
+        font-size 16px;
+</style>
 
 <script>
     export default{
