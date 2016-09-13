@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const ROOT_PATH = path.resolve("./");
 
-const publicPath = 'http://localhost:8080/dist';
+const publicPath = 'http://localhost:3001/dist';
 
 var devConfig = {
     entry: {
@@ -25,13 +25,8 @@ var devConfig = {
                 loader: 'vue'
             },
             {
-                test: /bootstrap\.styl$/,
-                loader: 'style!css!stylus!bootstrap',
-                exclude: /node_modules/
-            },
-            {
                 test: /\.styl$/,
-                loader: 'style!css!stylus'
+                loader: 'style!css?-minimize!postcss!stylus'
             },
             {
                 test: /\.js$/,

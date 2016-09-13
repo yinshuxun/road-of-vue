@@ -26,8 +26,8 @@ router.use('/index', function (req, res, next) {
 })
 app.use(router)
 
-app.listen(8080, function () {
-    console.log('Listening on 8080')
+app.listen(3001, function () {
+    console.log('Listening on 3001')
 })
 
 child_process.exec("start http://localhost:8080/#/")
