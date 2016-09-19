@@ -18,19 +18,6 @@ export default (router)=> {
         "blog": {
             name: "blog",
             component: Blog,
-        },
-        "region1": {
-            name: "region1",
-            component: Region1
-        },
-        "region2": {
-            name: "region2",
-            component: Region2
-        },
-        "region3": {
-            name: "region3",
-            component: Region3
         }
-
     })
 }
