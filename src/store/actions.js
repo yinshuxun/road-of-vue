@@ -9,3 +9,7 @@ export const reduceCounter = function ({dispatch, state}, value) {
 export const getCount = (state) => {
     return state.count
 }
+
+export const getSteps = (state) => {
+    return state.steps.reverse();
+}

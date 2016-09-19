@@ -3,7 +3,8 @@
         road of vue!
         <Increment></Increment>
         <Display></Display>
-        <div>当前数字:{{currentValue}}</div>
+        -----------------------
+        <div>生成随机数:</div>
         <ol>
             <li v-for="item in items">
                 {{item.id}}
@@ -23,7 +24,6 @@
     import Increment from './increment.vue'
     import './mock';
     import store from '../../store';
-    import {getCount} from '../../store/actions';
 
     export default{
         el: ()=> {
@@ -32,11 +32,6 @@
         data(){
             return {
                 items: [11, 22, 33]
-            }
-        },
-        vuex: {
-            getters: {
-                currentValue: getCount
             }
         },
         created(){
