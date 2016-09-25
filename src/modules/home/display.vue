@@ -13,9 +13,10 @@
     body {
         background-color: #ff0000;
     }
+
     .steps
         height 200px;
-        width:500px;
+        width: 500px;
         overflow scroll
 </style>
 <script>
@@ -27,6 +28,12 @@
                 currentValue: getCount,
                 steps: getSteps
             }
+        },
+        computed: {
+
+        },
+        methods: {
+
         }
     }
 </script>

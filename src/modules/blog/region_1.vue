@@ -37,6 +37,102 @@
                 <h2>suzhou </h2>
                 <h2>Information Science & Electronic Engineering </h2>
                 <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
+                <h1>Education</h1>
+                <h2>suzhou </h2>
+                <h2>Information Science & Electronic Engineering </h2>
+                <h3>2011-2015</h3>
             </div>
         </div>
     </div>
@@ -47,8 +143,7 @@
             return {
                 msg: 'hello vue'
             }
-        },
-
+        }
     }
 </script>
 
