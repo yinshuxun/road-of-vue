@@ -72,7 +72,12 @@ var devConfig = {
                 minifyJS: true
             }
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+
+    ]
+}
+if(process.env.NODE_ENV === 'production'){
+    devConfig.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 unused: true,
@@ -80,8 +85,9 @@ var devConfig = {
                 warnings: false
             },
             sourceMap: true
-        }),
-    ]
+        })
+    )
 }
+
 
 module.exports = devConfig;
