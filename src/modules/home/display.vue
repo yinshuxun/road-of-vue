@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div>当前总和为:{{currentValue}}</div>
+        <div>当前总和为:{{count}}</div>
         <div>操作步骤:</div>
         <div class="steps">
-            <div v-for="step in steps" track-by="$index">
+            <div v-for="(step,index) in steps" :key='index'>
                 {{step}}
             </div>
         </div>
@@ -20,20 +20,16 @@
         overflow scroll
 </style>
 <script>
+    import {mapGetters,mapMutations} from 'vuex'
     import {getCount, getSteps} from '../../store/actions';
 
     export default{
-        vuex: {
-            getters: {
-                currentValue: getCount,
-                steps: getSteps
-            }
-        },
         computed: {
-
+            ...mapGetters(['count', 'steps'])
         },
-        methods: {
-
-        }
+        created:function(){
+            console.log(mapMutations)
+        },
+        methods: {}
     }
 </script>

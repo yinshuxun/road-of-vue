@@ -13,7 +13,7 @@
 //$ npm install --save-dev babel-preset-stage-3
 {
   "presets": [
-    "es2015"
+    "es2015","stage-0"
   ],
   "plugins": []
 }

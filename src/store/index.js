@@ -8,18 +8,35 @@ const state = {
     count: 0,
     steps: []
 }
-const mutations = {
-    INCREMENT(state, amount){
-        state.steps.push("加上" + amount)
-        state.count = state.count + amount
+
+const getters = {
+    count(state){
+        return state.count
     },
-    REDUCE(state, amount){
-        state.steps.push("减去" + amount)
-        state.count -= amount
+    steps(state){
+        return state.steps
     }
 }
 
 export default new Vuex.Store({
     state,
-    mutations
+    mutations: {
+        increment(state, num){
+            state.count += num
+            state.steps.unshift('加上' + num)
+        },
+        reduce(state, num){
+            state.count -= num
+            state.steps.unshift('减去' + num)
+        }
+    },
+    actions: {
+        increment({commit}, num){
+            commit('increment', num)
+        },
+        reduce({commit}, num){
+            commit('reduce', num)
+        }
+    },
+    getters
 })

@@ -12,9 +12,11 @@ var devConfig = {
         alias: {
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
-            'components': path.resolve(__dirname, '../src/components')
+            'components': path.resolve(__dirname, '../src/components'),
+            'vue':'vue/dist/vue'
         }
     },
+
     entry: {
         app: [
             `${ROOT_PATH}/src/main.js`,
@@ -31,7 +33,10 @@ var devConfig = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue'
+                loader: 'vue',
+                options:{
+                    sourceMap:true
+                }
             },
             {
                 test: /\.styl$/,
@@ -56,7 +61,13 @@ var devConfig = {
             }
         ]
     },
+    devtool:'source-map',
     plugins: [
+        // new webpack.LoaderOptionsPlugin({
+        //     options: {
+        //         devTools: true
+        //     }
+        // }),
         new htmlWebpackPlugin({
             title: 'road of vue',
             template: `ejs!${ROOT_PATH}/src/index.ejs`,

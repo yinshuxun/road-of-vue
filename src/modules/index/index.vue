@@ -1,7 +1,7 @@
 <template>
     <ol>
-        <li><a v-link="'home'">Home</a></li>
-        <li><a v-link="'blog'">Blog</a></li>
+        <router-link to="home">Home</router-link>
+        <router-link to="blog">Blog</router-link>
     </ol>
 </template>
 <style lang="stylus" scoped>

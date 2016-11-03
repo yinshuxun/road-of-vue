@@ -26,9 +26,6 @@
     import store from '../../store';
 
     export default{
-        el: ()=> {
-            return "body";
-        },
         data(){
             return {
                 items: [11, 22, 33]
