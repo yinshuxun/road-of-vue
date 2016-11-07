@@ -13,10 +13,9 @@ var devConfig = {
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
             'components': path.resolve(__dirname, '../src/components'),
-            'vue': 'vue/dist/vue'
+            'vue': 'vue/dist/vue',
         }
     },
-
     entry: {
         app: [
             `${ROOT_PATH}/src/main.js`,
@@ -35,7 +34,14 @@ var devConfig = {
                 test: /\.vue$/,
                 loader: 'vue',
                 options: {
-                    sourceMap: true
+                    cssModules: {
+                        localIdentName: '[path][name]---[local]---[hash:base64:5]',
+                        camelCase: true
+                    },
+                    loaders: {
+                        styl: 'vue-style!css?sourceMap!stylus',
+                        js: 'babel'
+                    }
                 }
             },
             {
@@ -72,11 +78,16 @@ var devConfig = {
                 minifyJS: true
             }
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            vue: {
+                postcss: [require('postcss-cssnext')()]
+            }
+        })
 
     ]
 }
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     devConfig.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -88,6 +99,5 @@ if(process.env.NODE_ENV === 'production'){
         })
     )
 }
-
 
 module.exports = devConfig;

@@ -23,7 +23,6 @@
     import Display from './display.vue';
     import Increment from './increment.vue'
     import './mock';
-    import store from '../../store';
 
     export default{
         data(){
@@ -39,7 +38,6 @@
         components: {
             Display,
             Increment
-        },
-        store
+        }
     }
 </script>
