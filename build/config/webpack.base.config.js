@@ -49,6 +49,10 @@ var devConfig = {
                 loader: 'style!css?-minimize!postcss!stylus'
             },
             {
+                test: /\.css$/,
+                loader: 'style!css?-minimize!postcss'
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel'
@@ -58,11 +62,13 @@ var devConfig = {
                 loader: 'vue-html'
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
+                // do NOT base64encode @1x/@2x/@3x images
+                exclude: /@[1-3]x/,
                 loader: 'url',
-                query: {
+                options: {
                     limit: 10000,
-                    name: '[name].[ext]?[hash]'
+                    name: '[name].[ext]?[hash:7]'
                 }
             }
         ]

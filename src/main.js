@@ -10,7 +10,7 @@ import store from './store/index';
 import App from './App'
 import routerConfig from "./router";
 import "./utils";
-import "./stylus/index.styl"
+import "./common/stylus/index.styl"
 
 Vue.config.silent = false
 

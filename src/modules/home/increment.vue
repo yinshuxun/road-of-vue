@@ -5,11 +5,6 @@
         <button @click='increment(a)'>+</button>
     </div>
 </template>
-<style>
-    body {
-        background-color: #ddd;
-    }
-</style>
 <script>
     import {mapActions} from 'vuex';
 
@@ -24,6 +19,6 @@
             inputData(e){
                 this.a = parseInt(e.target.value);
             }
-        },
+        }
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div>
         road of vue!
         <Increment></Increment>
         <Display></Display>
@@ -12,12 +12,6 @@
         </ol>
     </div>
 </template>
-<style lang="stylus" scoped>
-    .home
-        background-color: #dfdfdf;
-        font-size: 30px;
-        color: #fff;
-</style>
 <script>
     import Vue from 'vue';
     import Display from './display.vue';
