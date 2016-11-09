@@ -1,51 +1,46 @@
-<template>
-    <div :class="[$style.xiuPanel]" :num="getNum" :style="getStyle">
-        <div :class="$style.popRight">
-            <i class="iconfont icon-fuzhi" style="font-size: 20px;"
-               data-toggle="tooltip" data-placement="bottom" title="复制"></i>
-            <i class="iconfont icon-bianji" style="font-size: 19px;"
-               data-toggle="tooltip" data-placement="bottom" title="编辑"></i>
-            <i class="iconfont icon-shanchu" style="font-size: 20px;"
-               data-toggle="tooltip" data-placement="bottom" title="删除"></i>
-        </div>
-        <div class="xiu-panel-pop off">
-        </div>
-        <div :class="$style.sceneImg">
-            <img src="./image/default-scene.jpg">
-        </div>
-    </div>
-</template>
 <script>
-    export default{
-        props: ['id'],
+    export default {
+        props: ['id','xiuList'],
         data(){
             return {
-                style: {
-                    height: '170px',
-                    position: "absolute",
-                    width: '200px'
-                },
-                num: ''
+                style: {},
             }
         },
-        created(){
-            console.log(this.$parent.panelHeights)
-            const height = Math.random() * 200 + 200;
-            const num = this.id - 1;
-            this.$parent.panelHeights.push(height);
+        create(){
+
         },
-        components: {},
-        computed: {
-            getStyle: function () {
-                return {
-                    height: Math.random() * 200 + 200 + 'px',
-                    position: "absolute",
-                    width: '200px',
-                    left: this.id % 4 * (200 + 20) + 'px'
+        mounted(){
+            const cols = 4,
+                    itemWidth = 200,
+                    height = Math.random() * 600 + 200,
+                    index = this.id - 1,
+                    heights = this.$parent.phonePanelHeights,
+                    colIndex = index % cols,
+                    $this = this;
+            let top = 0, left = colIndex * (200 + 20);
+            if (heights.length < cols) {
+                this.$emit("summary", {left: left, top: top + height + 20}, heights.length);
+            } else if (heights.length == cols) {
+                let topList = [];
+                heights.forEach(function (val) {
+                    topList.push(val.top)
+                })
+                const topMax = Math.min(...topList);
+                for (let index in heights) {
+                    if (heights[index].top === topMax) {
+                        top += heights[index].top;
+                        left = heights[index].left;
+                        $this.$emit("summary", {left: heights[index].left, top: top + height + 20}, index)
+                        break;
+                    }
                 }
-            },
-            getNum: function () {
-                return this.id
+            }
+            this.style = {
+                height: height + 'px',
+                position: "absolute",
+                width: itemWidth,
+                left: left + 'px',
+                top: top + 'px'
             }
         }
     }
