@@ -6,16 +6,13 @@
                 style: {},
             }
         },
-        create(){
-
-        },
         mounted(){
             const cols = 4,
                     itemWidth = 200,
                     height = Math.random() * 600 + 200,
                     index = this.id - 1,
                     heights = this.$parent.phonePanelHeights,
-                    colIndex = index % cols,
+                    colIndex = (index + 1) % cols,
                     $this = this;
             let top = 0, left = colIndex * (200 + 20);
             if (heights.length < cols) {
