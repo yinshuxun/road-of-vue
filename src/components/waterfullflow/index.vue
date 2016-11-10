@@ -1,23 +1,31 @@
 <script>
     export default {
-        props: ['moduleStyle', 'id', 'xiuList', 'width', 'gap', 'height', 'item', 'index', 'uniqueId','cols'],
+        props: ['moduleStyle', 'id', 'xiuList', 'width', 'gap', 'height', 'item', 'index', 'uniqueId', 'cols'],
         data(){
             return {
                 style: {}
             }
         },
+        mounted(){
+            const $this=this,newCols = parseInt(document.body.clientWidth  / ($this.width + $this.gap) || 200);
+            this.initStyle($this.cols || newCols)
+
+            window.addEventListener('resize', ()=> {
+                this.initStyle(parseInt(document.body.clientWidth  / ((+$this.width) + (+$this.gap)) || 200));
+            })
+        },
         methods: {
             initStyle: function (colss) {
+                console.log(colss)
                 let uid = 'phonePanelHeights_' + this.uniqueId || 'init';
                 if (this.index === 0) {
                     this.$root[uid] = []
                 }
-
                 const cols = colss,
-                        itemWidth = this.width,
-                        height = this.height,
-                        gap = this.gap,
-                        index = this.index - 1,
+                        itemWidth = +this.width,
+                        height = +this.height,
+                        gap = +this.gap,
+                        index = +this.index - 1,
                         heights = this.$root[uid],
                         colIndex = (index + 1) % cols;
                 let top = 0, left = colIndex * (itemWidth + gap);
@@ -46,14 +54,6 @@
                     top: top + 'px'
                 }
             }
-        },
-        mounted(){
-            const newCols = parseInt((document.body.clientWidth - 284) / 222);
-            this.initStyle(this.cols || newCols)
-
-            window.addEventListener('resize', ()=> {
-                this.initStyle(parseInt((document.body.clientWidth - 284) / 222));
-            })
         }
     }
 </script>

@@ -3,6 +3,7 @@
         <router-link to="home">Home</router-link>
         <router-link to="blog">Blog</router-link>
         <router-link to="show">Show</router-link>
+        <router-link to="waterfallflow">Waterfallfull</router-link>
     </ol>
 </template>
 <style lang="stylus" scoped>

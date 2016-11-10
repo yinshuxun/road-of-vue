@@ -21,32 +21,35 @@
                            cols="4"
                            :width="200"
                            :gap="20"
-                           :height="Math.random() * 200 + 200"
+                           :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
                            :item="item"
                            :index="index"
                            :moduleStyle="$style"
                            uniqueId="xyx"
                            inline-template>
-                <!--<div v-for=" ":class="[$style.xiuPanel,$style.createNewShow]" :style="style">-->
-                <!--<div :class="[$style.beCenter,$style.beMiddle]">-->
-                <!--<i class="iconfont icon-tianjia"></i>-->
-                <!--</div>-->
-                <!--<div :class="[$style.beCenter,$style.beMiddle]">新建作品</div>-->
-                <!--</div>-->
-                <div :class="[moduleStyle.xiuPanel]" :style="style">
-                    <div :class="moduleStyle.popRight">
-                        <i class="iconfont icon-fuzhi" style="font-size: 20px;"
-                           data-toggle="tooltip" data-placement="bottom" title="复制"></i>
-                        <i class="iconfont icon-bianji" style="font-size: 19px;"
-                           data-toggle="tooltip" data-placement="bottom" title="编辑"></i>
-                        <i class="iconfont icon-shanchu" style="font-size: 20px;"
-                           data-toggle="tooltip" data-placement="bottom" title="删除"></i>
+                <div>
+                    <div v-if="index === 0" :class="[moduleStyle.xiuPanel,moduleStyle.createNewShow]" :style="style">
+                        <div  :class="">
+                            <div :class="[moduleStyle.beCenter,moduleStyle.beMiddle]">
+                                <i class="iconfont icon-tianjia"></i>
+                            </div>
+                            <div :class="[moduleStyle.beCenter,moduleStyle.beMiddle]">新建作品</div>
+                        </div>
                     </div>
-                    <div class="xiu-panel-pop off">
-                    </div>
-                    <div :class="moduleStyle.sceneImg">
-                        <!--{{index}}-->
-                        <img src="./image/default-scene.jpg">
+                    <div v-else :class="[moduleStyle.xiuPanel]" :style="style">
+                        <div :class="moduleStyle.popRight">
+                            <i class="iconfont icon-fuzhi" style="font-size: 20px;"
+                               data-toggle="tooltip" data-placement="bottom" title="复制"></i>
+                            <i class="iconfont icon-bianji" style="font-size: 19px;"
+                               data-toggle="tooltip" data-placement="bottom" title="编辑"></i>
+                            <i class="iconfont icon-shanchu" style="font-size: 20px;"
+                               data-toggle="tooltip" data-placement="bottom" title="删除"></i>
+                        </div>
+                        <div class="xiu-panel-pop off">
+                        </div>
+                        <div :class="moduleStyle.sceneImg">
+                            <img src="./image/default-scene.jpg">
+                        </div>
                     </div>
                 </div>
             </WaterfallItem>
