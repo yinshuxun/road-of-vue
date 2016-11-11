@@ -1,23 +1,28 @@
 <template>
-    <div :class="$style.waterFallArea">
-        <WaterFallFlow v-for="(item,index) in items"
-                       width=200
-                       gap=20
-                       :resize="true"
-                       :height='Math.random() * 200 + 200'
-                       :item="item"
-                       :index="index"
-                       :moduleStyle="$style"
-                       uniqueId="xyx"
-                       inline-template>
+    <!--<div :class="$style.waterFallArea">-->
+    <div>
+        <Waterfall v-for="(item,index) in items"
+                   :maxWidth='240'
+                   :gapWidth='20'
+                   :gapHeight='20'
+                   :resize="true"
+                   :height='Math.random() * 200 + 200'
+                   :item="item"
+                   :index="index"
+                   :moduleStyle="$style"
+                   uniqueId="xyx"
+                   inline-template>
             <div :class="moduleStyle.item" :style="style">
                 {{index}}
             </div>
-        </WaterFallFlow>
+        </Waterfall>
     </div>
+
+    <!--</div>-->
 </template>
 <script>
-    import WaterFallFlow from '../../components/waterfullflow';
+//    import WaterFallFlow from '../../components/waterfullflow';
+    import Waterfall from 'v-waterfall';
 
     export default{
         data(){
@@ -26,7 +31,7 @@
             }
         },
         components: {
-            WaterFallFlow
+            Waterfall
         }
     }
 </script>

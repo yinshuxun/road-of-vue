@@ -12,7 +12,7 @@ import routerConfig from "./router";
 import "./utils";
 import "./common/stylus/index.styl"
 
-Vue.config.silent = false
+Vue.config.silent = true
 
 
 const router = new VueRouter(routerConfig);

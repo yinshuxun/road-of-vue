@@ -1,39 +1,52 @@
 <script>
     export default {
-        props: ['moduleStyle', 'id', 'xiuList', 'width', 'gap', 'height', 'item', 'index', 'uniqueId', 'cols', 'resize'],
+        props: ['moduleStyle', 'id', 'xiuList', 'maxWidth', 'gapWidth', 'gapHeight',
+            'height', 'item', 'index', 'uniqueId', 'cols', 'resize'],
         data(){
             return {
                 style: {}
             }
         },
         mounted(){
-            const $this = this,
-                    newCols = parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200),
-                    newWidth = (document.body.clientWidth - (newCols - 1) * $this.gap) / newCols;
-            this.initStyle($this.cols || newCols, newWidth)
+            this.initStyle(...this.initData())
 
-            window.addEventListener('resize', ()=> {
-                const newCols = parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200),
-                        newWidth = (document.body.clientWidth - (newCols - 1) * $this.gap) / newCols;
-                this.initStyle(parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200), newWidth);
+            this.resize && window.addEventListener('resize', ()=> {
+                this.resizeEvt(()=> {
+                    this.initStyle(...this.initData())
+                })
             })
         },
         methods: {
-            initStyle: function (colss, width) {
+            resizeEvt: function (callback) {
+                if (this.timeoutId) {
+                    clearTimeout(this.timeoutId)
+                }
+                return this.timeoutId = setTimeout(function () {
+                    callback();
+                }, 500);
+
+            },
+            initData: function () {
+                const parentWidth = parseFloat(window.getComputedStyle(this.$el.parentElement).width),
+                        newCols = Math.ceil(parentWidth / ((+this.maxWidth) + (+this.gapWidth))),
+                        newWidth = (parentWidth - (newCols - 1) * this.gapWidth) / newCols;
+                return [newCols, newWidth]
+            },
+            initStyle: function (cols, width) {
                 let uid = 'phonePanelHeights_' + this.uniqueId || 'init';
                 if (this.index === 0) {
                     this.$root[uid] = []
                 }
-                const cols = colss,
-                        itemWidth = width || +this.width,
+                const itemWidth = width || +this.width,
                         height = +this.height,
-                        gap = +this.gap,
+                        gapWidth = +this.gapWidth,
+                        gapHeight = +this.gapHeight,
                         index = +this.index - 1,
                         heights = this.$root[uid],
                         colIndex = (index + 1) % cols;
-                let top = 0, left = colIndex * (itemWidth + gap);
+                let top = 0, left = colIndex * (itemWidth + gapWidth);
                 if (heights.length < cols) {
-                    heights[heights.length] = {left: left, top: top + height + gap};
+                    heights[heights.length] = {left: left, top: top + height + gapHeight};
                 } else if (heights.length == cols) {
                     let topList = [];
                     heights.forEach(function (val) {
@@ -44,7 +57,7 @@
                         if (heights[index].top === topMax) {
                             top += heights[index].top;
                             left = heights[index].left;
-                            heights[index] = {left: heights[index].left, top: top + height + gap};
+                            heights[index] = {left: heights[index].left, top: top + height + gapHeight};
                             break;
                         }
                     }

@@ -17,10 +17,11 @@
             </div>
         </div>
         <div :class="$style.xiuListArea">
-            <WaterfallItem v-for="(item,index) in total"
-                           cols="4"
-                           :width="200"
-                           :gap="20"
+            <WaterFallFlow v-for="(item,index) in total"
+                           :maxWidth="200"
+                           :gapWidth="20"
+                           :gapHeight="20"
+                           :resize="true"
                            :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
                            :item="item"
                            :index="index"
@@ -52,12 +53,12 @@
                         </div>
                     </div>
                 </div>
-            </WaterfallItem>
+            </WaterFallFlow>
         </div>
     </div>
 </template>
 <script>
-    import WaterfallItem from "./WaterfallItem.vue";
+    import WaterFallFlow from "../../components/waterfullflow";
     import xiuList from './data/xiu-list.js';
 
     export default{
@@ -71,7 +72,7 @@
             const $this = this;
         },
         components: {
-            WaterfallItem
+            WaterFallFlow
         },
         computed: {
             getXiuList: function () {
