@@ -1,28 +1,31 @@
 <script>
     export default {
-        props: ['moduleStyle', 'id', 'xiuList', 'width', 'gap', 'height', 'item', 'index', 'uniqueId', 'cols'],
+        props: ['moduleStyle', 'id', 'xiuList', 'width', 'gap', 'height', 'item', 'index', 'uniqueId', 'cols', 'resize'],
         data(){
             return {
                 style: {}
             }
         },
         mounted(){
-            const $this=this,newCols = parseInt(document.body.clientWidth  / ($this.width + $this.gap) || 200);
-            this.initStyle($this.cols || newCols)
+            const $this = this,
+                    newCols = parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200),
+                    newWidth = (document.body.clientWidth - (newCols - 1) * $this.gap) / newCols;
+            this.initStyle($this.cols || newCols, newWidth)
 
             window.addEventListener('resize', ()=> {
-                this.initStyle(parseInt(document.body.clientWidth  / ((+$this.width) + (+$this.gap)) || 200));
+                const newCols = parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200),
+                        newWidth = (document.body.clientWidth - (newCols - 1) * $this.gap) / newCols;
+                this.initStyle(parseInt(document.body.clientWidth / ((+$this.width) + (+$this.gap)) || 200), newWidth);
             })
         },
         methods: {
-            initStyle: function (colss) {
-                console.log(colss)
+            initStyle: function (colss, width) {
                 let uid = 'phonePanelHeights_' + this.uniqueId || 'init';
                 if (this.index === 0) {
                     this.$root[uid] = []
                 }
                 const cols = colss,
-                        itemWidth = +this.width,
+                        itemWidth = width || +this.width,
                         height = +this.height,
                         gap = +this.gap,
                         index = +this.index - 1,
@@ -49,7 +52,7 @@
                 this.style = {
                     height: height + 'px',
                     position: "absolute",
-                    width: itemWidth,
+                    width: itemWidth + 'px',
                     left: left + 'px',
                     top: top + 'px'
                 }

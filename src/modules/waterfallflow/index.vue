@@ -1,9 +1,9 @@
 <template>
     <div :class="$style.waterFallArea">
         <WaterFallFlow v-for="(item,index) in items"
-                       cols=6
                        width=200
                        gap=20
+                       :resize="true"
                        :height='Math.random() * 200 + 200'
                        :item="item"
                        :index="index"
