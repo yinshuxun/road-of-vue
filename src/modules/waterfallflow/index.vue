@@ -1,6 +1,5 @@
 <template>
-    <!--<div :class="$style.waterFallArea">-->
-    <div>
+    <div :class="$style.waterFallArea">
         <Waterfall v-for="(item,index) in items"
                    :maxWidth='240'
                    :gapWidth='20'
@@ -17,12 +16,10 @@
             </div>
         </Waterfall>
     </div>
-
-    <!--</div>-->
 </template>
 <script>
-//    import WaterFallFlow from '../../components/waterfullflow';
-    import Waterfall from 'v-waterfall';
+    import Waterfall from '../../components/waterfullflow';
+//    import Waterfall from 'v-waterfall';
 
     export default{
         data(){
