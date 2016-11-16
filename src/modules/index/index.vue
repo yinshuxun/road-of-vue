@@ -6,7 +6,7 @@
         <router-link to="waterfallflow">Waterfallfull</router-link>
     </ol>
 </template>
-<style lang="stylus" scoped>
+<style lang="styl">
     body
         background-color: #eoeoeo;
 </style>

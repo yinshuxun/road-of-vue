@@ -13,9 +13,9 @@
     </div>
 </template>
 <script>
-    import Vue from 'vue';
     import Display from './display.vue';
     import Increment from './increment.vue'
+    import axios from 'axios';
     import './mock';
 
     export default{
@@ -25,8 +25,8 @@
             }
         },
         created(){
-            Vue.http.get("/get-data-0").then((ret)=> {
-                this.items = ret.data.json().list
+            axios.get("/get-data-0").then((ret)=> {
+                this.items = ret.data.list
             })
         },
         components: {

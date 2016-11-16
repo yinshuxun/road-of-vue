@@ -17,20 +17,19 @@
             </div>
         </div>
         <div :class="$style.xiuListArea">
-            <WaterFallFlow v-for="(item,index) in total"
-                           :maxWidth="200"
-                           :gapWidth="20"
-                           :gapHeight="20"
-                           :resize="true"
-                           :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
-                           :item="item"
-                           :index="index"
-                           :moduleStyle="$style"
-                           uniqueId="xyx"
-                           inline-template>
+            <WaterFall v-for="(item,index) in total"
+                       :maxWidth="200"
+                       :gapWidth="20"
+                       :gapHeight="20"
+                       :resize="true"
+                       :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
+                       :item="item"
+                       :index="index"
+                       :moduleStyle="$style"
+                       inline-template>
                 <div>
                     <div v-if="index === 0" :class="[moduleStyle.xiuPanel,moduleStyle.createNewShow]" :style="style">
-                        <div  :class="">
+                        <div :class="">
                             <div :class="[moduleStyle.beCenter,moduleStyle.beMiddle]">
                                 <i class="iconfont icon-tianjia"></i>
                             </div>
@@ -53,13 +52,16 @@
                         </div>
                     </div>
                 </div>
-            </WaterFallFlow>
+            </WaterFall>
         </div>
     </div>
 </template>
 <script>
-    import WaterFallFlow from "../../components/waterfullflow";
+    //    import WaterFallFlow from "../../components/waterfullflow";
+    import WaterFall from "v-waterfall";
     import xiuList from './data/xiu-list.js';
+    import axios from 'axios';
+    import './mock.js';
 
     export default{
         data(){
@@ -69,10 +71,13 @@
             }
         },
         mounted(){
-            const $this = this;
+            axios.get('/get-show-list').then((res)=> {
+                const data = res.data;
+
+            })
         },
         components: {
-            WaterFallFlow
+            WaterFall
         },
         computed: {
             getXiuList: function () {
