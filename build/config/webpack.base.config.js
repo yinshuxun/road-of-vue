@@ -16,6 +16,9 @@ var devConfig = {
             'vue': 'vue/dist/vue',
         }
     },
+    resolveLoader: {
+        moduleExtensions: ['-loader']
+    },
     entry: {
         app: [
             `${ROOT_PATH}/src/main.js`,

@@ -24,9 +24,7 @@
         computed: {
             ...mapGetters(['count', 'steps'])
         },
-        created: function () {
-            console.log(mapMutations)
-        },
+        created: function () {},
         methods: {}
     }
 </script>
