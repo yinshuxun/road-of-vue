@@ -3,11 +3,11 @@ const webpack = require('webpack')
 const path = require('path')
 const WebpackDevMiddleware = require('webpack-dev-middleware')
 const WebpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('../config/webpack.base.config')
+const config = require('../config/index')
 const compiler = webpack(config)
 const child_process = require("child_process")
 
-app = express()
+let app = express()
 app.set('views', './src')
 app.set('view engine', 'ejs')
 app.use(express.static('dist'));

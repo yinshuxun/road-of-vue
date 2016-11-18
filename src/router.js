@@ -1,6 +1,6 @@
+import Index from "./modules/index/index.vue";
 import Home from "./modules/home"
 import Blog from "./modules/blog";
-import Index from "./modules/index";
 import Show from "./modules/show";
 import WaterFallFlow from "./modules/waterfallflow";
 
@@ -11,6 +11,5 @@ export default {
         {path: '/blog', component: Blog},
         {path: '/show', component: Show},
         {path: '/waterfallflow', component: WaterFallFlow},
-
     ]
 }
