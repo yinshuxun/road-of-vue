@@ -33,10 +33,10 @@ if (isProd) {
 function createRenderer (bundle) {
   // https://github.com/vuejs/vue/blob/next/packages/vue-server-renderer/README.md#why-use-bundlerenderer
   return require('vue-server-renderer').createBundleRenderer(bundle, {
-    cache: require('lru-cache')({
-      max: 1000,
-      maxAge: 1000 * 60 * 15
-    })
+    // cache: require('lru-cache')({
+    //   max: 1000,
+    //   maxAge: 1000 * 60 * 15
+    // })
   })
 }
 
@@ -65,7 +65,7 @@ app.get('*', (req, res) => {
 
   res.setHeader("Content-Type", "text/html");
   var s = Date.now()
-  const context = { url: req.url }
+  const context = { url: req.url}
 
   const renderStream = renderer.renderToStream(context)
 

@@ -1,10 +1,6 @@
 import Vue from "vue";
-// import VueTouch from "vue-touch";
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
-// Vue.use(VueTouch);
 Vue.use(VueRouter);
-// Vue.use(VueResource);
 import store from './store/index';
 
 import App from './App'

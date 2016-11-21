@@ -3,7 +3,7 @@
     "build": "webpack --progress --colors --config build/config/webpack.base.config",
     "deploy": "NODE_ENV=production webpack --progress --colors --config build/config/webpack.base.config",
     "start": "NODE_ENV=dev nodemon ./build/server/server.js",
-    "ssr:dev": "cross-env nodemon server.js",
+    "ssr:dev": "nodemon ./server.js",
     "ssr:run": "cross-env NODE_ENV=production nodemon server.js",
     "ssr:build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production webpack --config build/config/webpack.client.config.js --progress --hide-modules",
