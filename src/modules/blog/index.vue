@@ -20,7 +20,6 @@
     </div>
 </template>
 <script>
-    import './index.styl'
     import region_1 from "./region_1.vue"
     import region_2 from "./region_2.vue"
     import region_3 from "./region_3.vue"
@@ -44,3 +43,4 @@
         }
     }
 </script>
+<style src="./index.styl" lang="stylus"></style>

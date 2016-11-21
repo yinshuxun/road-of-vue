@@ -37,9 +37,7 @@ module.exports = function setupDevServer (app, opts) {
   const mfs = new MFS()
   const outputPath = path.join(serverConfig.output.path, serverConfig.output.filename)
   serverCompiler.outputFileSystem = mfs
-  console.log(mfs)
   serverCompiler.watch({}, (err, stats) => {
-    console.log("----------输入文件-------3")
     if (err) throw err
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))
