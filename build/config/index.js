@@ -43,7 +43,7 @@ var devConfig = {
                         camelCase: true
                     },
                     loaders: {
-                        styl: 'vue-style!css?sourceMap!stylus',
+                        stylus: 'vue-style!css?sourceMap!stylus',
                         js: 'babel'
                     }
                 }

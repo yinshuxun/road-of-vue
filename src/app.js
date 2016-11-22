@@ -4,7 +4,7 @@ Vue.use(VueRouter);
 import store from './store/index';
 
 import App from './App.vue'
-import routerConfig from "./router";
+import routerConfig from "./ssr-router";
 // import "./utils";
 // import "./common/stylus/index.styl"
 

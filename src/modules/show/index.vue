@@ -9,10 +9,14 @@
                 </div>
                 <div :class="[$style.searchCode,$style.borderBottom]">
                     <span :class="$style.searchTitle">类型:</span>
-                    <span :class="[$style.searchItem,$style.active]" data-value="" data-search="type">全部</span>
-                    <span :class="$style.searchItem" data-value="1001" data-search="type">定制</span>
-                    <span :class="$style.searchItem" data-value="1002" data-search="type">电影</span>
-                    <span :class="$style.searchItem" data-value="1003" data-search="type">电视剧</span>
+                    <span @click='changeShowType' :class="[$style.searchItem,type == '1000' ? $style.active :'']"
+                          value="1000" data-search="type">全部</span>
+                    <span @click='changeShowType' :class="[$style.searchItem,type == '1001' ? $style.active :'']"
+                          value="1001" data-search="type">定制</span>
+                    <span @click='changeShowType' :class="[$style.searchItem,type == '1002' ? $style.active :'']"
+                          value="1002" data-search="type">电影</span>
+                    <span @click='changeShowType' :class="[$style.searchItem,type == '1003' ? $style.active :'']"
+                          value="1003" data-search="type">电视剧</span>
                 </div>
             </div>
         </div>
@@ -67,21 +71,26 @@
         data(){
             return {
                 msg: 'hello vue',
-                total: 100
+                total: '',
+                type: '1000'
             }
         },
-        mounted(){
-            axios.get('/get-show-list').then((res)=> {
-                const data = res.data;
-
-            })
+        created(){
+            this.getShowList()
         },
         components: {
             WaterFall
         },
-        computed: {
-            getXiuList: function () {
-                return xiuList.data
+        methods: {
+            changeShowType(e){
+                this.getShowList()
+                this.type = e.currentTarget.attributes['value'].value;
+            },
+            getShowList(){
+                axios.get('/get-show-list').then((res)=> {
+                    const data = res.data.data;
+                    this.total = data.length
+                })
             }
         }
     }
