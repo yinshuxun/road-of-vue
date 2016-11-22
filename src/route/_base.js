@@ -1,8 +1,8 @@
-import Index from "./modules/index/index.vue";
-import Home from "./modules/home";
-import Blog from "./modules/blog";
-import Show from "./modules/show";
-import WaterFallFlow from "./modules/waterfallflow";
+import Index from "../modules/index/index.vue";
+import Home from "../modules/home";
+import Blog from "../modules/blog";
+import Show from "../modules/show";
+import WaterFallFlow from "../modules/waterfallflow";
 
 export default {
     mode: 'hash',

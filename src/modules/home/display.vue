@@ -17,8 +17,7 @@
     }
 </style>
 <script>
-    import {mapGetters, mapMutations} from 'vuex';
-    import {getCount, getSteps} from '../../store/actions';
+    import {mapGetters} from 'vuex';
 
     export default{
         computed: {

@@ -64,14 +64,12 @@
     //    import WaterFallFlow from "../../components/waterfullflow";
     import WaterFall from "v-waterfall";
     import xiuList from './data/xiu-list.js';
-    import axios from 'axios';
     import './mock.js';
 
     export default{
         data(){
             return {
                 msg: 'hello vue',
-                total: '',
                 type: '1000'
             }
         },
@@ -83,13 +81,14 @@
         },
         methods: {
             changeShowType(e){
-                this.getShowList()
+                this.total = ~~(Math.random(100)*10 +1)
                 this.type = e.currentTarget.attributes['value'].value;
             },
             getShowList(){
-                axios.get('/get-show-list').then((res)=> {
+                this.$http.get('/get-show-list').then((res)=> {
                     const data = res.data.data;
                     this.total = data.length
+                    console.log(data.length)
                 })
             }
         }
