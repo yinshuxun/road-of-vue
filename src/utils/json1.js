@@ -1,3 +1,3 @@
 export const json1 = {
-    b: 1
+  b: 1
 }

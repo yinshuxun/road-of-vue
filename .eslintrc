@@ -1,4 +1,11 @@
 {
+    "root": true,
+    "parser": "babel-eslint",
     "extends": "vue"
-    // Your overrides...
+//    "plugins": ["flowtype"],
+//    "rules": {
+//        "no-useless-escape": 0,
+//        "flowtype/define-flow-type": 1,
+//        "flowtype/use-flow-type": 1
+//    }
 }

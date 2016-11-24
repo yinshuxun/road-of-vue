@@ -10,6 +10,6 @@ app.$mount('#app')
 
 // service worker
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-  console.log('准备挂载');
+  console.log('准备挂载')
   navigator.serviceWorker.register('/dist/service-worker.js')
 }

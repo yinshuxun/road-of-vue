@@ -9,6 +9,6 @@ module.exports = {
     camelCase: true
   },
   loaders: {
-    js: "buble-loader?objectAssign=Object.assign"
+    js: 'buble-loader?objectAssign=Object.assign'
   }
 }

@@ -1,7 +1,7 @@
-String.prototype.json = function () {
-    return JSON.parse(this)
-}
+// String.prototype.json = function () {
+//   return JSON.parse(this)
+// }
 
 export const json = {
-    a: 1
+  a: 1
 }
