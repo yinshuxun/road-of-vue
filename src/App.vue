@@ -1,19 +1,17 @@
 <template>
     <div id="app">
         <div v-if="loading==='ing'">
-            加载中..
+            <VLoading></VLoading>
         </div>
         <transition name="custom-classes-transition"
                     enter-active-class="animated slideInLeft">
-            <router-view>
-
-            </router-view>
+            <router-view></router-view>
         </transition>
     </div>
 </template>
 <script>
-    import {mapGetters} from 'vuex';
-
+    import {mapGetters} from 'vuex'
+    import VLoading from "./components/loading/index.vue"
 
     export default{
         data(){
@@ -23,6 +21,9 @@
         },
         computed: {
             ...mapGetters(['loading'])
+        },
+        components: {
+            VLoading
         }
     }
 </script>

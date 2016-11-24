@@ -81,7 +81,7 @@
         },
         methods: {
             changeShowType(e){
-                this.total = ~~(Math.random(100)*10 +1)
+                this.total = ~~(Math.random(100) * 10 + 1)
                 this.type = e.currentTarget.attributes['value'].value;
             },
             getShowList(){
