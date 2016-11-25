@@ -26,8 +26,10 @@
                        :gapWidth="20"
                        :gapHeight="20"
                        :resize="true"
+                       :total="total"
                        :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
                        :item="item"
+                       :items="total"
                        :index="index"
                        :moduleStyle="$style"
                        inline-template>
@@ -61,8 +63,8 @@
     </div>
 </template>
 <script>
-    //    import WaterFallFlow from "../../components/waterfullflow";
-    import WaterFall from "v-waterfall";
+    //    import WaterFall from "v-waterfall";
+    import WaterFall from "../../components/waterfullflow";
     import xiuList from './data/xiu-list.js';
     import './mock.js';
 
@@ -70,7 +72,8 @@
         data(){
             return {
                 msg: 'hello vue',
-                type: '1000'
+                type: '1000',
+                total:''
             }
         },
         created(){
@@ -81,14 +84,13 @@
         },
         methods: {
             changeShowType(e){
-                this.total = ~~(Math.random(100) * 10 + 1)
                 this.type = e.currentTarget.attributes['value'].value;
+                this.getShowList();
             },
             getShowList(){
-                this.$http.get('/get-show-list').then((res)=> {
+                this.$http.get('/get-show-list/' + this.type).then((res)=> {
                     const data = res.data.data;
                     this.total = data.length
-                    console.log(data.length)
                 })
             }
         }

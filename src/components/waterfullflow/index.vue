@@ -1,6 +1,6 @@
 <script>
     export default {
-        props: ['moduleStyle', 'id', 'xiuList', 'maxWidth', 'gapWidth', 'gapHeight',
+        props: ['moduleStyle', 'items', 'maxWidth', 'gapWidth', 'gapHeight',
             'height', 'item', 'index', 'uniqueId', 'cols', 'resize'],
         data(){
             return {
@@ -16,15 +16,19 @@
                 })
             })
         },
+        watch: {
+            items: function (pre, after) {
+                this.initStyle(...this.initData())
+            }
+        },
         methods: {
             resizeEvt: function (callback) {
                 if (this.timeoutId) {
                     clearTimeout(this.timeoutId)
                 }
                 return this.timeoutId = setTimeout(function () {
-                    callback();
-                }, 500);
-
+                    callback()
+                }, 400)
             },
             initData: function () {
                 const parentWidth = parseFloat(window.getComputedStyle(this.$el.parentElement).width),
