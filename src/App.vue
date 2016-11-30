@@ -11,19 +11,19 @@
 </template>
 <script>
     import {mapGetters} from 'vuex'
-    import VLoading from "./components/loading/index.vue"
+    import VLoading from './components/loading/index.vue'
 
     export default{
-        data(){
-            return {
-                msg: 'road of vue',
-            }
-        },
-        computed: {
-            ...mapGetters(['loading'])
-        },
-        components: {
-            VLoading
+      data () {
+        return {
+          msg: 'road of vue'
         }
+      },
+      computed: {
+        ...mapGetters(['loading'])
+      },
+      components: {
+        VLoading
+      }
     }
 </script>

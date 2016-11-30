@@ -17,13 +17,13 @@
     }
 </style>
 <script>
-    import {mapGetters} from 'vuex';
+    import {mapGetters} from 'vuex'
 
     export default{
-        computed: {
-            ...mapGetters(['count', 'steps'])
-        },
-        created: function () {},
-        methods: {}
+      computed: {
+        ...mapGetters(['count', 'steps'])
+      },
+      created: function () {},
+      methods: {}
     }
 </script>

@@ -64,36 +64,36 @@
 </template>
 <script>
     //    import WaterFall from "v-waterfall";
-    import WaterFall from "../../components/waterfullflow";
-    import xiuList from './data/xiu-list.js';
-    import './mock.js';
+    import WaterFall from '../../components/waterfullflow'
+//    import xiuList from './data/xiu-list.js'
+    import './mock.js'
 
     export default{
-        data(){
-            return {
-                msg: 'hello vue',
-                type: '1000',
-                total:''
-            }
-        },
-        created(){
-            this.getShowList()
-        },
-        components: {
-            WaterFall
-        },
-        methods: {
-            changeShowType(e){
-                this.type = e.currentTarget.attributes['value'].value;
-                this.getShowList();
-            },
-            getShowList(){
-                this.$http.get('/get-show-list/' + this.type).then((res)=> {
-                    const data = res.data.data;
-                    this.total = data.length
-                })
-            }
+      data () {
+        return {
+          msg: 'hello vue',
+          type: '1000',
+          total: ''
         }
+      },
+      created () {
+        this.getShowList()
+      },
+      components: {
+        WaterFall
+      },
+      methods: {
+        changeShowType (e) {
+          this.type = e.currentTarget.attributes['value'].value
+          this.getShowList()
+        },
+        getShowList () {
+          this.$http.get('/get-show-list/' + this.type).then((res) => {
+            const data = res.data.data
+            this.total = data.length
+          })
+        }
+      }
     }
 </script>
 <style src="./index.styl" lang="stylus" module/>

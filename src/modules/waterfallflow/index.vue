@@ -19,17 +19,17 @@
 </template>
 <script>
 //    import Waterfall from '../../components/waterfullflow';
-    import Waterfall from 'v-waterfall';
+    import Waterfall from 'v-waterfall'
 
     export default{
-        data(){
-            return {
-                items: 100
-            }
-        },
-        components: {
-            Waterfall
+      data () {
+        return {
+          items: 100
         }
+      },
+      components: {
+        Waterfall
+      }
     }
 </script>
 <style src="./index.styl" lang="stylus" module/>

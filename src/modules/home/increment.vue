@@ -6,19 +6,19 @@
     </div>
 </template>
 <script>
-    import {mapActions} from 'vuex';
+    import {mapActions} from 'vuex'
 
     export default{
-        data(){
-            return {
-                a: 0
-            }
-        },
-        methods: {
-            ...mapActions(['increment', 'reduce']),
-            inputData(e){
-                this.a = parseInt(e.target.value);
-            }
+      data () {
+        return {
+          a: 0
         }
+      },
+      methods: {
+        ...mapActions(['increment', 'reduce']),
+        inputData (e) {
+          this.a = parseInt(e.target.value)
+        }
+      }
     }
 </script>

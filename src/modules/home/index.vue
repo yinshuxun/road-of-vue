@@ -13,24 +13,24 @@
     </div>
 </template>
 <script>
-    import Display from './display.vue';
+    import Display from './display.vue'
     import Increment from './increment.vue'
-    import './mock';
+    import './mock'
 
     export default{
-        data(){
-            return {
-                items: [11, 22, 33]
-            }
-        },
-        created(){
-            this.$http.get("/get-data-0").then((ret)=> {
-                this.items = ret.data.list
-            })
-        },
-        components: {
-            Display,
-            Increment
+      data () {
+        return {
+          items: [11, 22, 33]
         }
+      },
+      created () {
+        this.$http.get('/get-data-0').then((ret) => {
+          this.items = ret.data.list
+        })
+      },
+      components: {
+        Display,
+        Increment
+      }
     }
 </script>

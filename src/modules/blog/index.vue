@@ -20,27 +20,27 @@
     </div>
 </template>
 <script>
-    import region_1 from "./region_1.vue"
-    import region_2 from "./region_2.vue"
-    import region_3 from "./region_3.vue"
+    import region_1 from './region_1.vue'
+    import region_2 from './region_2.vue'
+    import region_3 from './region_3.vue'
 
     export default{
-        data(){
-            return {
-                msg: 'hello vue',
-                currentView: "region_1"
-            }
-        },
-        methods: {
-            choose(path, event){
-                this.currentView = path
-            }
-        },
-        components: {
-            region_1,
-            region_2,
-            region_3
+      data () {
+        return {
+          msg: 'hello vue',
+          currentView: 'region_1'
         }
+      },
+      methods: {
+        choose (path, event) {
+          this.currentView = path
+        }
+      },
+      components: {
+        region_1,
+        region_2,
+        region_3
+      }
     }
 </script>
 <style src="./index.styl" lang="stylus"></style>

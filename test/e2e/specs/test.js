@@ -2,8 +2,8 @@
 // http://nightwatchjs.org/guide#usage
 
 module.exports = {
-    'default e2e tests': browser => {
-        browser
+  'default e2e tests': browser => {
+    browser
             .setWindowPosition(0, 0)
             .pause(10000)
             .frameParent()
@@ -62,5 +62,5 @@ module.exports = {
         // there is no router-view tag in vue 2
         // .assert.elementCount('.router-view', 0)
         // .end()
-    }
+  }
 }
