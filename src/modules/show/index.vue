@@ -1,7 +1,7 @@
 <template>
     <div :class="$style.container">
         <div :class="$style.searchCodeArea">
-            <div>
+            <template>
                 <div :class="$style.searchCode">
                     <span :class="$style.searchTitle">时间:</span>
                     <span :class="[$style.searchItem,$style.active]" class="time-all" data-search="time" data-value="">全部</span>
@@ -18,18 +18,18 @@
                     <span @click='changeShowType' :class="[$style.searchItem,type == '1003' ? $style.active :'']"
                           value="1003" data-search="type">电视剧</span>
                 </div>
-            </div>
+            </template>
         </div>
         <div :class="$style.xiuListArea">
-            <WaterFall v-for="(item,index) in total"
+            <WaterFall v-for="(item,index) in items"
                        :maxWidth="200"
                        :gapWidth="20"
                        :gapHeight="20"
                        :resize="true"
                        :total="total"
-                       :height="index === 0 ? 200 : (Math.random() * 200 + 200)"
+                       :height="index === 0 ? 200 : item.height"
                        :item="item"
-                       :items="total"
+                       :items="items"
                        :index="index"
                        :moduleStyle="$style"
                        inline-template>
@@ -56,6 +56,9 @@
                         <div :class="moduleStyle.sceneImg">
                             <img src="./image/default-scene.jpg">
                         </div>
+                        <div style="position: absolute;top: 0;left: 0;font-size: 30px;">
+                            {{index}}
+                        </div>
                     </div>
                 </div>
             </WaterFall>
@@ -65,35 +68,38 @@
 <script>
     //    import WaterFall from "v-waterfall";
     import WaterFall from '../../components/waterfullflow'
-//    import xiuList from './data/xiu-list.js'
+    //    import xiuList from './data/xiu-list.js'
     import './mock.js'
 
     export default{
-      data () {
-        return {
-          msg: 'hello vue',
-          type: '1000',
-          total: ''
-        }
-      },
-      created () {
-        this.getShowList()
-      },
-      components: {
-        WaterFall
-      },
-      methods: {
-        changeShowType (e) {
-          this.type = e.currentTarget.attributes['value'].value
-          this.getShowList()
+        data () {
+            return {
+                msg: 'hello vue',
+                type: '1000',
+                items: []
+            }
         },
-        getShowList () {
-          this.$http.get('/get-show-list/' + this.type).then((res) => {
-            const data = res.data.data
-            this.total = data.length
-          })
+        created () {
+            this.getShowList()
+        },
+        components: {
+            WaterFall
+        },
+        methods: {
+            changeShowType (e) {
+                this.type = e.currentTarget.attributes['value'].value
+                this.getShowList()
+            },
+            getShowList () {
+                this.$http.get('/get-show-list/' + this.type).then((res) => {
+                    const data = res.data.data;
+                    this.items = [];
+                    this.$nextTick(function () {
+                        this.items = data
+                    })
+                })
+            }
         }
-      }
     }
 </script>
 <style src="./index.styl" lang="stylus" module/>
