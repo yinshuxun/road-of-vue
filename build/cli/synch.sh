@@ -16,4 +16,13 @@ git commit -m "$MESSAGE"
 # push
 git push
 
+# commit github.io
+cd ../../yinshuxun.github.io/road-of-vue
+git add -A
+git commit -m "$MESSAGE"
+
+# push
+git push
+
+
 
