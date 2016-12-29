@@ -1,10 +1,8 @@
-require('babel-register')
-
 const express = require('express')
 const webpack = require('webpack')
 const WebpackDevMiddleware = require('webpack-dev-middleware')
 const WebpackHotMiddleware = require('webpack-hot-middleware')
-const config = require('../config/index')
+const config = require('../config/base')
 const compiler = webpack(config)
 const childProcess = require('child_process')
 

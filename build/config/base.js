@@ -3,8 +3,9 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import vConsolePlugin from 'vconsole-webpack-plugin';
 
+const ENV = process.env.NODE_ENV;
 const ROOT_PATH = path.resolve('./')
-const publicPath = 'http://localhost:3001/dist'
+const publicPath = ENV == 'production' ? '' : 'http://localhost:3001/dist'
 
 var devConfig = {
     resolve: {
