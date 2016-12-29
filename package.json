@@ -14,7 +14,8 @@
     "lint": "eslint --max-warnings 10 --ext .js,.vue .",
     "lint:fix": "yarn run lint -- --fix",
     "lint:styl": "node build/bin/stylint.js",
-    "push": "zsh ./build/cli/push.sh"
+    "push": "zsh ./build/cli/push.sh",
+    "synch": "zsh ./build/cli/synch.sh"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

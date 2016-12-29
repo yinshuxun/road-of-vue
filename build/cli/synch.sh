@@ -1,3 +1,7 @@
+#compile and publish to github.io
+yarn compile:prd
+cp -rf ./dist/  ../../yinshuxun.github.io/road-of-vue
+
 #set message
 
 set -e
