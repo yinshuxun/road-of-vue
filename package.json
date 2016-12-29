@@ -1,7 +1,7 @@
 {
   "scripts": {
     "rm":"rm -rf dist",
-    "start": "NODE_ENV=dev nodemon ./build/bin/start.js",
+    "dev": "NODE_ENV=dev nodemon build/bin/start.js",
     "build": "webpack --progress --colors --config build/config/index",
     "compile": "yarn run rm && NODE_ENV webpack --progress --colors --config build/bin/compile",
     "compile:prd": "yarn run rm && NODE_ENV=production webpack --progress --colors --config build/bin/compile",
