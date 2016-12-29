@@ -8,20 +8,6 @@ const ROOT_PATH = path.resolve('./')
 const publicPath = ENV == 'production' ? '' : 'http://localhost:3001/dist'
 
 var devConfig = {
-    resolve: {
-        modules: [`${ROOT_PATH}/node_modules`],
-        extensions: ['.js', '.vue'],
-        alias: {
-            'src': path.resolve(__dirname, '../src'),
-            'assets': path.resolve(__dirname, '../src/assets'),
-            'components': path.resolve(__dirname, '../src/components'),
-            'vue': 'vue/dist/vue'
-        },
-        enforceExtension: false
-    },
-    resolveLoader: {
-        moduleExtensions: ['-loader']
-    },
     entry: {
         app: [
             `${ROOT_PATH}/src/main.js`,
@@ -29,10 +15,26 @@ var devConfig = {
             'webpack-hot-middleware/client'
         ]
     },
+    resolve: {
+        modules: [`${ROOT_PATH}/node_modules`],
+        extensions: ['.js', '.vue'],
+        alias: {
+            'src': path.resolve(__dirname, '../src'),
+            'assets': path.resolve(__dirname, '../src/assets'),
+            'components': path.resolve(__dirname, '../src/components'),
+            'modules': path.resolve(__dirname, '../src/modules'),
+            'vue': 'vue/dist/vue'
+        },
+        enforceExtension: false
+    },
+    resolveLoader: {
+        moduleExtensions: ['-loader']
+    },
     output: {
-        path: `${ROOT_PATH}/dist`,
+        path: `${ROOT_PATH}/dist/`,
+        publicPath: publicPath,
         filename: '[name].js',
-        publicPath: publicPath
+        chunkFilename:'[id].[chunkhash].js?'
     },
     module: {
         rules: [

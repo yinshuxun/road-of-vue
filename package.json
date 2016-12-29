@@ -1,9 +1,10 @@
 {
   "scripts": {
+    "rm":"rm -rf dist",
     "start": "NODE_ENV=dev nodemon ./build/bin/start.js",
     "build": "webpack --progress --colors --config build/config/index",
-    "compile": "webpack --progress --colors --config build/bin/compile",
-    "compile:prd": "NODE_ENV=production webpack --progress --colors --config build/bin/compile",
+    "compile": "yarn run rm && NODE_ENV webpack --progress --colors --config build/bin/compile",
+    "compile:prd": "yarn run rm && NODE_ENV=production webpack --progress --colors --config build/bin/compile",
     "deploy": "NODE_ENV=production webpack --progress --colors --config build/config/webpack.base.config",
     "e2e": "cross-env NODE_ENV=test nodemon ./test/e2e/runner.js",
     "ssr:dev": "nodemon ./ssr-server.js",

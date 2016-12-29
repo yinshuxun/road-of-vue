@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #set message
 
 set -e

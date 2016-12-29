@@ -1,11 +1,22 @@
+#get push message
+set -e
+echo "Enter message: "
+read MESSAGE
+
 #compile and publish to github.io
 yarn compile:prd
 cp -rf ./dist/  ../../yinshuxun.github.io/road-of-vue
 
-#run push
-./push.sh
+#push road-of-vue
+echo "Pushing $MESSAGE ..."
+# commit
+git add -A
+git commit -m "$MESSAGE"
 
-# commit github.io
+# push
+git push
+
+# push github.io
 cd ../../yinshuxun.github.io/road-of-vue
 git add -A
 git commit -m "$MESSAGE"
