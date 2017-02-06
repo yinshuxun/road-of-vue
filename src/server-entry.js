@@ -1,4 +1,4 @@
-import { app, router, store } from './app'
+import {app, router, store} from './app'
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -16,7 +16,7 @@ export default context => {
 
   // no matched routes
   if (!matchedComponents.length) {
-    return Promise.reject({ code: '404' })
+    return Promise.reject({code: '404'})
   }
 
   // Call preFetch hooks on components matched by the route.

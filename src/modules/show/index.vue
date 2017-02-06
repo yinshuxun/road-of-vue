@@ -72,34 +72,34 @@
     import './mock.js'
 
     export default{
-        data () {
-            return {
-                msg: 'hello vue',
-                type: '1000',
-                items: []
-            }
-        },
-        created () {
-            this.getShowList()
-        },
-        components: {
-            WaterFall
-        },
-        methods: {
-            changeShowType (e) {
-                this.type = e.currentTarget.attributes['value'].value
-                this.getShowList()
-            },
-            getShowList () {
-                this.$http.get('/get-show-list/' + this.type).then((res) => {
-                    const data = res.data.data;
-                    this.items = [];
-                    this.$nextTick(function () {
-                        this.items = data
-                    })
-                })
-            }
+      data() {
+        return {
+          msg: 'hello vue',
+          type: '1000',
+          items: []
         }
+      },
+      created() {
+        this.getShowList()
+      },
+      components: {
+        WaterFall
+      },
+      methods: {
+        changeShowType(e) {
+          this.type = e.currentTarget.attributes['value'].value
+          this.getShowList()
+        },
+        getShowList() {
+          this.$http.get('/get-show-list/' + this.type).then((res) => {
+              const data = res.data.data
+              this.items = []
+              this.$nextTick(function () {
+                  this.items = data
+                })
+            })
+        }
+      }
     }
 </script>
 <style src="./index.styl" lang="stylus" module/>

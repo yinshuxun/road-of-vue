@@ -9,14 +9,14 @@
     import {mapActions} from 'vuex'
 
     export default{
-      data () {
+      data() {
         return {
           a: 0
         }
       },
       methods: {
         ...mapActions(['increment', 'reduce']),
-        inputData (e) {
+        inputData(e) {
           this.a = parseInt(e.target.value)
         }
       }

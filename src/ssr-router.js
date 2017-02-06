@@ -6,12 +6,12 @@ import WaterFallFlow from './modules/waterfallflow'
 
 export default {
   mode: 'history',
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: [
-        { path: '/', component: Index },
-        { path: '/home', component: Home },
-        { path: '/blog', component: Blog },
-        { path: '/show', component: Show },
-        { path: '/waterfallflow', component: WaterFallFlow }
+        {path: '/', component: Index},
+        {path: '/home', component: Home},
+        {path: '/blog', component: Blog},
+        {path: '/show', component: Show},
+        {path: '/waterfallflow', component: WaterFallFlow}
   ]
 }

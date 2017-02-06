@@ -13,7 +13,24 @@
 //$ npm install --save-dev babel-preset-stage-3
 {
   "presets": [
-    "es2015","stage-0"
+    "es2015",
+    "stage-0"
   ],
-  "plugins": []
+  "plugins": [
+    "transform-runtime",
+    "transform-flow-strip-types"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "flow-runtime",
+          {
+            "assert": true,
+            "annotate": true
+          }
+        ]
+      ]
+    }
+  }
 }

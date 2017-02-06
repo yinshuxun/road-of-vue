@@ -4,7 +4,7 @@ const MFS = require('memory-fs')
 const clientConfig = require('../config/webpack.client.config')
 const serverConfig = require('../config/webpack.server.config')
 
-module.exports = function setupDevServer (app, opts) {
+module.exports = function setupDevServer(app, opts) {
   // modify client config to work with hot middleware
   clientConfig.entry.app = ['webpack-hot-middleware/client', clientConfig.entry.app]
   clientConfig.output.filename = '[name].js'

@@ -18,12 +18,12 @@
     import './mock'
 
     export default{
-      data () {
+      data() {
         return {
           items: [11, 22, 33]
         }
       },
-      created () {
+      created() {
         this.$http.get('/get-data-0').then((ret) => {
           this.items = ret.data.list
         })

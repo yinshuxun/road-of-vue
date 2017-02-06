@@ -1,3 +1,3 @@
 require('babel-register')
 require('babel-polyfill')
-module.exports =  require('../config/base')
+module.exports = require('../config/base')

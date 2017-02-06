@@ -14,7 +14,7 @@
     import VLoading from './components/loading/index.vue'
 
     export default{
-      data () {
+      data() {
         return {
           msg: 'road of vue'
         }

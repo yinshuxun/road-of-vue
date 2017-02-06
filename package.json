@@ -1,8 +1,7 @@
 {
   "scripts": {
-    "rm":"rm -rf dist",
+    "rm": "rm -rf dist",
     "dev": "NODE_ENV=dev nodemon build/bin/start.js",
-    "build": "webpack --progress --colors --config build/config/index",
     "compile": "yarn run rm && NODE_ENV webpack --progress --colors --config build/bin/compile",
     "compile:prd": "yarn run rm && NODE_ENV=production webpack --progress --colors --config build/bin/compile",
     "deploy": "NODE_ENV=production webpack --progress --colors --config build/config/webpack.base.config",
@@ -24,9 +23,11 @@
     "babel-core": "^6.0.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.0.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "^6.14.0",
+    "babel-preset-flow-vue": "^1.0.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-preset-stage-2": "^6.0.0",
     "babel-register": "^6.18.0",
@@ -41,14 +42,14 @@
     "ejs": "^2.5.1",
     "ejs-loader": "^0.3.0",
     "es6-promise": "^4.0.5",
-    "eslint": "^3.11.1",
+    "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-config-vue": "^2.0.1",
     "eslint-friendly-formatter": "^2.0.6",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-react": "^6.7.1",
     "eslint-plugin-standard": "^2.0.1",
     "eslint-plugin-vue": "^1.0.0",
     "eslint-plugin-vuefix": "^0.1.0",
@@ -57,6 +58,7 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "file-loader": "^0.8.4",
     "firebase": "^3.6.1",
+    "flow-bin": "^0.38.0",
     "fs": "^0.0.1-security",
     "html-webpack-plugin": "^2.24.1",
     "jsdom": "^9.8.3",
@@ -95,6 +97,5 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.15.1",
     "webpack-hot-middleware": "^2.12.2"
-  },
-  "dependencies": {}
+  }
 }

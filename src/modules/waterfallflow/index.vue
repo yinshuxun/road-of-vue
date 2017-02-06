@@ -22,7 +22,7 @@
     import Waterfall from 'v-waterfall'
 
     export default{
-      data () {
+      data() {
         return {
           items: 100
         }

@@ -13,7 +13,7 @@ app.use(express.static('dist'))
 
 app.use(WebpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
-  stats: { colors: true }
+  stats: {colors: true}
 }))
 app.use(WebpackHotMiddleware(compiler))
 
