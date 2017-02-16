@@ -1,2 +1,2 @@
 #road-of-vue
- live 
+ [live](https://yinshuxun.github.io/road-of-vue/index.html#/)
