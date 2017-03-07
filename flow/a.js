@@ -36,7 +36,6 @@ type People = {
   name:string,
   age:number,
   height:number,
-  lovers:Array[string]
+  // lovers:Array[string],
+  height:Number
 }
-
-new People()
