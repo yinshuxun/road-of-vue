@@ -18,6 +18,7 @@
   ],
   "plugins": [
     "transform-runtime",
+    "add-module-exports",
     //去除flow代码
     "transform-flow-strip-types"
   ],

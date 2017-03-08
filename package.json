@@ -99,6 +99,7 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-flow-runtime": "^0.8.0",
     "flow-runtime": "^0.8.0"
   }

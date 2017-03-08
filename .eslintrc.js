@@ -10,7 +10,8 @@ module.exports = {
     `vue${argv.fix ? 'fix' : ''}`
   ],
   extends: [
-    'standard'
+    'standard',
+    'plugin:flowtype/recommended'
   ],
   "rules": {
     'array-bracket-spacing': 2,
@@ -26,6 +27,7 @@ module.exports = {
     ],
     'max-nested-callbacks': 2,
     'max-params': [2, 5],
+    'no-mixed-operators': 0,
     'space-before-function-paren': [
       2,
       {

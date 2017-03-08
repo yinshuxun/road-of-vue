@@ -11,7 +11,7 @@ if (module.hot) {
   module.hot.accept()
 }
 
-new Vue({
+Vue({
   extends: App,
   router,
   el: '#app',
